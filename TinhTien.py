@@ -47,12 +47,13 @@ if __name__ =='__main__':
     try:
         with open(tenfile, 'r',encoding='utf-8') as myfile:
             file = myfile.read()
-        print("\n", file, "\n-------------------------------------\n")
+        print("Noi dung file:\n", file)
+        print("So line= {}".format(count_line()), "\n-------------------------------------\n")
+
         tong = congtien(tachkg(), tachtien())
         total = 0
         for i in tong:
             total += i
         print("\n Ki: {} \n Gia: {}\n tong: {}\n SoTien= {} ".format(tachkg(), tachtien(), tong, total))
-        print("So line= {}".format(count_line()))
     except IOError:
         print("ERROR, ko tim thay file!!!")
