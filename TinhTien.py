@@ -36,7 +36,12 @@ def tachtien():
     return results
 def congtien(lista,listb):
     return [a*b for a,b in zip(lista,listb)]
-
+def count_line():
+    line=1
+    for i in file:
+        if(i=="\n"):
+            line+=1
+    return line
 if __name__ =='__main__':
     tenfile = input("Danh Ten file...: ")
     try:
@@ -48,5 +53,6 @@ if __name__ =='__main__':
         for i in tong:
             total += i
         print("\n Ki: {} \n Gia: {}\n tong: {}\n SoTien= {} ".format(tachkg(), tachtien(), tong, total))
+        print("So line= {}".format(count_line()))
     except IOError:
         print("ERROR, ko tim thay file!!!")
