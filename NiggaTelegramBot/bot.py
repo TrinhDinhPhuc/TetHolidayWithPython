@@ -7,7 +7,7 @@ import time
 from telepot.loop import MessageLoop
 from datetime import datetime
 from pytz import timezone
-from craw_news import get_news_tiendientu,tiendientu,news
+from getlink import *
 # me kiep, py3 bat them dau .truoc file
 # start script service startup
 # sudo systemctl start myscript.service
@@ -169,6 +169,7 @@ if __name__=='__main__':
     today2=today = get_VN_Time('d')
     print ("Today:",today)
 
+
     bot.message_loop(handle)
 while 1:
     today2 = get_VN_Time('d')
@@ -183,7 +184,6 @@ while 1:
         f.write("NEWDATE: " + today+"\n\n")
         f.close()
         f = open("log.txt", 'wb')
-
 #print int(new_time[0]),int(new_time[1])
     else:
         if int(new_time[0])==6 and (int(new_time[1])==0   or int(new_time[1])==1):
@@ -198,5 +198,4 @@ while 1:
             news2_arr=news()
             print (new_time)
             get_NEWS()
-
     time.sleep(10)
